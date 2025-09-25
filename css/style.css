@@ -491,7 +491,7 @@
 .testimonial-carousel .owl-nav .owl-prev,
 .testimonial-carousel .owl-nav .owl-next {
     margin-right: 15px;
-    color: var(--bs-primary);
+    color: #40E0D0;
     font-size: 45px;
     transition: .5s;
 }
