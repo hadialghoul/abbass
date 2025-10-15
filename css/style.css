@@ -395,6 +395,12 @@
     background-size: cover;
 }
 
+@media (max-width: 768px) {
+    .appoinment {
+        background-position: center center;
+    }
+}
+
 
 /*** Team ***/
 .team .team-item {
