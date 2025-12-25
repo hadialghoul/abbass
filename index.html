@@ -50,7 +50,7 @@
                 </a>
                 <div class="ms-auto d-flex align-items-center">
                     <small class="ms-4"><i class="fa fa-map-marker-alt me-3"></i>Address: 123 Business Park Blvd, Suite 400, Los Angeles, CA 90001</small>
-                    <small class="ms-4"><i class="fa fa-envelope me-3"></i>info@primefixco.com</small>
+                    <small class="ms-4"><i class="fa fa-envelope me-3"></i>info@primefixusa.com</small>
                     <small class="ms-4"><i class="fa fa-phone-alt me-3"></i>(555) 123-4567</small>
                    
                 </div>
@@ -481,37 +481,42 @@
                 <div class="col-lg-6 mb-n5 wow fadeIn" data-wow-delay="0.7s">
                     <div class="bg-white p-5">
                         <h2 class="text-uppercase mb-4">GET A QOUTE</h2>
-                        <div class="row g-3">
-                            <div class="col-sm-6">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control border-0 bg-light" id="name" placeholder="Your Name">
-                                    <label for="name">Your Name</label>
+                        <form id="contactForm">
+                            <div class="row g-3">
+                                <div class="col-sm-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control border-0 bg-light" id="name" name="name" placeholder="Your Name" required>
+                                        <label for="name">Your Name</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control border-0 bg-light" id="mail" name="email" placeholder="Your Email" required>
+                                        <label for="mail">Your Email</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control border-0 bg-light" id="mobile" name="mobile" placeholder="Your Mobile" required>
+                                        <label for="mobile">Your Mobile</label>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <textarea class="form-control border-0 bg-light" placeholder="Leave a message here" id="service" name="service"
+                                            style="height: 130px" required></textarea>
+                                        <label for="service">Your Service</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div id="formMessage" class="alert d-none" role="alert"></div>
+                                </div>
+                                <div class="col-12 text-center">
+                                    <button class="btn btn-primary w-100 py-3" type="submit">Submit Now</button>
                                 </div>
                             </div>
-                            <div class="col-sm-6">
-                                <div class="form-floating">
-                                    <input type="email" class="form-control border-0 bg-light" id="mail" placeholder="Your Email">
-                                    <label for="mail">Your Email</label>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control border-0 bg-light" id="mobile" placeholder="Your Mobile">
-                                    <label for="mobile">Your Mobile</label>
-                                </div>
-                            </div>
-                            
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <textarea class="form-control border-0 bg-light" placeholder="Leave a message here" id="message"
-                                        style="height: 130px"></textarea>
-                                    <label for="message">Your Service</label>
-                                </div>
-                            </div>
-                            <div class="col-12 text-center">
-                                <button class="btn btn-primary w-100 py-3" type="submit">Submit Now</button>
-                            </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -611,7 +616,7 @@
                     <h5 class="text-uppercase text-light mb-4">Our Office</h5>
                     <p class="mb-2"><i class="fa fa-map-marker-alt text-primary me-3"></i>123 Business Park Blvd, Suite 400, Los Angeles, CA 90001</p>
                     <p class="mb-2"><i class="fa fa-phone-alt text-primary me-3"></i>(555) 123-4567</p>
-                    <p class="mb-2"><i class="fa fa-envelope text-primary me-3"></i>info@primefixco.com</p>
+                    <p class="mb-2"><i class="fa fa-envelope text-primary me-3"></i>info@primefixusa.com</p>
                     
                 </div>
                 <div class="col-lg-4 col-md-12">
@@ -673,6 +678,97 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    
+    <!-- Contact Form Submission Script -->
+    <script>
+        $(document).ready(function() {
+            $('#contactForm').on('submit', function(e) {
+                e.preventDefault(); // Prevent default form submission
+                
+                // Get form data - try multiple methods to ensure we get the values
+                var form = document.getElementById('contactForm');
+                var formDataObj = {};
+                
+                // Get values using getElementById (most reliable)
+                var nameEl = form.querySelector('#name');
+                var emailEl = form.querySelector('#mail');
+                var mobileEl = form.querySelector('#mobile');
+                var serviceEl = form.querySelector('#service');
+                
+                formDataObj.name = nameEl ? nameEl.value.trim() : '';
+                formDataObj.email = emailEl ? emailEl.value.trim() : '';
+                formDataObj.mobile = mobileEl ? mobileEl.value.trim() : '';
+                formDataObj.service = serviceEl ? serviceEl.value.trim() : '';
+                
+                // Validate form
+                if (!formDataObj.name || !formDataObj.email || !formDataObj.mobile || !formDataObj.service) {
+                    showMessage('Please fill in all fields.', 'danger');
+                    return;
+                }
+                
+                // Use formDataObj for the rest of the code
+                var formData = formDataObj;
+                
+                // Validate email format
+                var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(formData.email)) {
+                    showMessage('Please enter a valid email address.', 'danger');
+                    return;
+                }
+                
+                // Disable submit button
+                var submitBtn = $(this).find('button[type="submit"]');
+                submitBtn.prop('disabled', true).text('Submitting...');
+                
+                // Clear previous messages
+                $('#formMessage').addClass('d-none');
+                
+                // Send AJAX request to Django backend
+                var apiUrl = 'https://abbas-backend.onrender.com/api/contact/';
+                
+                $.ajax({
+                    url: apiUrl,
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify(formData),
+                    success: function(response) {
+                        if (response.success) {
+                            showMessage(response.message, 'success');
+                            // Reset form
+                            $('#contactForm')[0].reset();
+                        } else {
+                            showMessage(response.message || 'An error occurred. Please try again.', 'danger');
+                        }
+                    },
+                    error: function(xhr) {
+                        var errorMessage = 'Failed to submit form. Please try again later.';
+                        if (xhr.responseJSON && xhr.responseJSON.message) {
+                            errorMessage = xhr.responseJSON.message;
+                        }
+                        showMessage(errorMessage, 'danger');
+                    },
+                    complete: function() {
+                        // Re-enable submit button
+                        submitBtn.prop('disabled', false).text('Submit Now');
+                    }
+                });
+            });
+            
+            function showMessage(message, type) {
+                var alertClass = type === 'success' ? 'alert-success' : 'alert-danger';
+                $('#formMessage')
+                    .removeClass('d-none alert-success alert-danger')
+                    .addClass(alertClass)
+                    .text(message)
+                    .focus();
+                
+                // Scroll to message
+                $('html, body').animate({
+                    scrollTop: $('#formMessage').offset().top - 100
+                }, 500);
+            }
+        });
+    </script>
 </body>
 
 </html>
