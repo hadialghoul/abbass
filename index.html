@@ -731,6 +731,7 @@
                     type: 'POST',
                     contentType: 'application/json',
                     data: JSON.stringify(formData),
+                    timeout: 30000, // 30 second timeout for Render cold starts
                     success: function(response) {
                         if (response.success) {
                             showMessage(response.message, 'success');
@@ -741,9 +742,14 @@
                         }
                     },
                     error: function(xhr) {
+                        console.error('Form submission error:', xhr);
                         var errorMessage = 'Failed to submit form. Please try again later.';
                         if (xhr.responseJSON && xhr.responseJSON.message) {
                             errorMessage = xhr.responseJSON.message;
+                        } else if (xhr.status === 0) {
+                            errorMessage = 'Cannot connect to server. The backend may be starting up. Please wait a moment and try again.';
+                        } else if (xhr.status >= 500) {
+                            errorMessage = 'Server error. Please try again in a few moments.';
                         }
                         showMessage(errorMessage, 'danger');
                     },
