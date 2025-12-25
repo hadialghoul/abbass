@@ -732,7 +732,9 @@
                     contentType: 'application/json',
                     data: JSON.stringify(formData),
                     timeout: 30000, // 30 second timeout for Render cold starts
+                    crossDomain: true,
                     success: function(response) {
+                        console.log('Success:', response);
                         if (response.success) {
                             showMessage(response.message, 'success');
                             // Reset form
@@ -741,15 +743,31 @@
                             showMessage(response.message || 'An error occurred. Please try again.', 'danger');
                         }
                     },
-                    error: function(xhr) {
-                        console.error('Form submission error:', xhr);
+                    error: function(xhr, status, error) {
+                        console.error('Form submission error:', {
+                            status: xhr.status,
+                            statusText: xhr.statusText,
+                            responseText: xhr.responseText,
+                            error: error
+                        });
                         var errorMessage = 'Failed to submit form. Please try again later.';
                         if (xhr.responseJSON && xhr.responseJSON.message) {
                             errorMessage = xhr.responseJSON.message;
-                        } else if (xhr.status === 0) {
+                        } else if (xhr.status === 0 || status === 'timeout') {
                             errorMessage = 'Cannot connect to server. The backend may be starting up. Please wait a moment and try again.';
+                        } else if (xhr.status === 400) {
+                            errorMessage = 'Invalid form data. Please check all fields are filled correctly.';
                         } else if (xhr.status >= 500) {
                             errorMessage = 'Server error. Please try again in a few moments.';
+                        } else if (xhr.responseText) {
+                            try {
+                                var errorData = JSON.parse(xhr.responseText);
+                                if (errorData.message) {
+                                    errorMessage = errorData.message;
+                                }
+                            } catch (e) {
+                                // Keep default error message
+                            }
                         }
                         showMessage(errorMessage, 'danger');
                     },
