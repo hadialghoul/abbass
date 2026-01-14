@@ -104,10 +104,46 @@
     transition: .5s;
 }
 
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.container-fluid.sticky-top {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+body > #spinner + .container-fluid {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+#spinner {
+    position: fixed;
+    z-index: 99999;
+}
+
+.navbar-brand {
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-brand h2 {
+    font-size: 2rem;
+    letter-spacing: 2px;
+}
+
+.white-toggler {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
 .navbar .navbar-nav .nav-link {
     margin-right: 35px;
-    padding: 25px 0;
-    color: #5684AE;
+    padding: 10px 0;
+    color: white;
     font-size: 16px;
     text-transform: uppercase;
     font-weight: 600;
@@ -116,7 +152,7 @@
 
 .navbar .navbar-nav .nav-link:hover,
 .navbar .navbar-nav .nav-link.active {
-    color: #5684AE;
+    color: white;
     opacity: 0.8;
 }
 
@@ -204,17 +240,24 @@
     object-fit: cover;
 }
 
+.carousel .carousel-item {
+    height: 800px;
+    overflow: hidden;
+}
+
+.carousel .carousel-item img {
+    width: 100%;
+    height: 800px;
+    object-fit: cover;
+}
+
 @media (max-width: 992px) {
     .carousel .carousel-item {
-        position: relative;
-        min-height: 600px;
+        height: 600px;
     }
     
     .carousel .carousel-item img {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+        height: 600px;
     }
 
     .carousel .carousel-indicators [data-bs-target] {
@@ -229,7 +272,11 @@
 
 @media (max-width: 768px) {
     .carousel .carousel-item {
-        min-height: 500px;
+        height: 500px;
+    }
+
+    .carousel .carousel-item img {
+        height: 500px;
     }
 
     .carousel .carousel-indicators [data-bs-target] {
