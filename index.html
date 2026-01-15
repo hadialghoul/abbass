@@ -39,33 +39,78 @@
         <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
     </div>
     <!-- Spinner End -->
-    <!-- Navbar Start -->
-    <div class="container-fluid sticky-top wow fadeIn" data-wow-delay="0.1s" style="background-color: #5684AE; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-top: 0; padding-top: 0; display: block;">
-        <div class="container">
-            <nav class="navbar navbar-expand-lg" style="padding: 25px 0;">
-                <a href="index.html" class="navbar-brand">
-                    <h2 class="text-white mb-0 fw-bold">PRIMEFIX</h2>
+    <!-- Topbar Start -->
+    <div class="container-fluid topbar px-0 d-none d-lg-block">
+        <div class="container px-0">
+            <div class="row gx-0 align-items-center" style="height: 45px;">
+                <div class="col-lg-8 text-center text-lg-start mb-lg-0">
+                    <div class="d-flex flex-wrap">
+                        <a href="#" class="text-muted me-4"><i class="fas fa-map-marker-alt text-primary me-2"></i>453 S Spring Street Ste 400 Los Angeles, CA 90013 United States</a>
+                        <a href="#" class="text-muted me-4"><i class="fas fa-phone-alt text-primary me-2"></i>(555) 123-4567</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center text-lg-end">
+                    <a href="#" class="text-muted"><i class="fas fa-envelope text-primary me-2"></i>info@primefixusa.com</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid sticky-top px-0">
+        <div class="position-absolute bg-dark" style="left: 0; top: 0; width: 100%; height: 100%;">
+        </div>
+        <div class="container px-0">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-white py-3 px-4">
+                <a href="index.html" class="navbar-brand p-0">
+                    <h1 class="text-primary m-0">PRIMEFIXUSA</h1>
+                    <!-- <img src="img/logo.png" alt="Logo"> -->
                 </a>
-                <button type="button" class="navbar-toggler" data-bs-toggle="collapse"
-                    data-bs-target="#navbarCollapse" style="border-color: white;">
-                    <span class="navbar-toggler-icon white-toggler"></span>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav mx-auto">
-                        <a href="index.html" class="nav-item nav-link active" style="color: white !important;">Home</a>
-                        <a href="#about" class="nav-item nav-link" style="color: white !important;">About</a>
-                        <a href="#service" class="nav-item nav-link" style="color: white !important;">Services</a>
-                        <a href="#feature" class="nav-item nav-link" style="color: white !important;">Features</a>
-                        <a href="#contact" class="nav-item nav-link" style="color: white !important;">Contact</a>
+                    <div class="navbar-nav ms-auto py-0">
+                        <a href="index.html" class="nav-item nav-link text-primary active">Home</a>
+                        <a href="about.html" class="nav-item nav-link text-primary">About</a>
+                        <div class="nav-item dropdown">
+                            <a href="services.html" class="nav-link dropdown-toggle text-primary" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+                            <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                                <li><a class="dropdown-item" href="services.html#electrical">Electrical</a></li>
+                                <li><a class="dropdown-item" href="services.html#plumbing">Plumbing</a></li>
+                                <li><a class="dropdown-item" href="services.html#hvac">HVAC</a></li>
+                                <li><a class="dropdown-item" href="services.html#locksmith">Locksmith</a></li>
+                                <li><a class="dropdown-item" href="services.html#painting">Painting</a></li>
+                                <li><a class="dropdown-item" href="services.html#handyman">Handyman</a></li>
+                                <li><a class="dropdown-item" href="services.html#flooring">Flooring</a></li>
+                                <li><a class="dropdown-item" href="services.html#janitorial">Janitorial</a></li>
+                                <li><a class="dropdown-item" href="services.html#pest-control">Pest Control</a></li>
+                                <li><a class="dropdown-item" href="services.html#pressure-washing">Pressure Washing</a></li>
+                            </ul>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle text-primary" id="industriesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Industries</a>
+                            <ul class="dropdown-menu" aria-labelledby="industriesDropdown">
+                                <li><a class="dropdown-item" href="#industries">Schools</a></li>
+                                <li><a class="dropdown-item" href="#industries">Retail Centers</a></li>
+                                <li><a class="dropdown-item" href="#industries">Shopping Malls</a></li>
+                                <li><a class="dropdown-item" href="#industries">Office Buildings</a></li>
+                                <li><a class="dropdown-item" href="#industries">Warehouses</a></li>
+                                <li><a class="dropdown-item" href="#industries">Healthcare Facilities</a></li>
+                            </ul>
+                        </div>
+                        <a href="contact.html" class="nav-item nav-link text-primary">Contact</a>
                     </div>
-                    <div class="text-center my-3 my-lg-0 ms-lg-auto">
-                        <a href="#contact" class="btn btn-primary py-2 px-4" style="background-color: white; border-color: white; color: #5684AE;">Get Quote</a>
+                    <div class="d-flex align-items-center flex-nowrap pt-xl-0">
+                        <a href="#contact" class="btn btn-primary rounded-pill text-white py-2 px-4 ms-2 flex-wrap flex-sm-shrink-0">REQUEST SERVICE</a>
                     </div>
                 </div>
             </nav>
         </div>
     </div>
-    <!-- Navbar End -->
+    <!-- Navbar & Hero End -->
 
 
     <!-- Carousel Start -->
@@ -85,7 +130,7 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="w-100" src="img/top1.jpg" alt="Image" style="height: 850px; object-fit: cover;">
+                    <img class="w-100" src="img/top1.jpg" alt="Image" style="height: 850px; object-fit: cover; object-position: center top;">
                     <div class="carousel-caption">
                         <h1 class="display-1 text-uppercase text-white mb-4 animated zoomIn">Precision in Every Task. 
                         </h1>
@@ -127,7 +172,7 @@
                     <h1 class="display-6 text-uppercase mb-4">ABOUT US</h1>
                     <p class="mb-4">Primefix is a nationwide trade services vendor built to support multi-site operations with speed, consistency, and accountability. Founded by experienced industry professionals, we understand the expectations that come with vendor programs, brand standards, and time-sensitive work orders.</p>
                     <p class="mb-4">Through self-performing crews positioned in key markets, we deliver reliable on-site service while maintaining local ownership of every job. Our teams follow strict job site protocols, safety requirements, and client guidelines — ensuring work is completed right the first time.</p>
-                    <p class="mb-4">We currently service major markets including California, Arizona, Texas, Oklahoma, Florida, and Illinois, with scalable coverage to support growing portfolios.</p>
+                    <p class="mb-4">We currently service major markets including <b>California, Arizona, Texas, Oklahoma, Florida, and Illinois</b>, with scalable coverage to support growing portfolios.</p>
                     <p class="mb-4">Primefix provides trade services across a wide range of commercial and industrial environments, including schools, retail centers, malls, office buildings, warehouses, and national store locations. From urgent repairs to scheduled maintenance, we make it easy to get qualified technicians on site and projects completed without disruption. We show up, we get it done, we stand behind it.</p>
                     <div class="row g-5 mb-4">
                         <div class="col-sm-6">
@@ -554,7 +599,7 @@
                 </div>
                 <div class="col-lg-6 mb-n5 wow fadeIn" data-wow-delay="0.7s">
                     <div class="bg-white p-5">
-                        <h2 class="text-uppercase mb-4">GET A QUOTE</h2>
+                        <h2 class="text-uppercase mb-4">REQUEST SERVICE</h2>
                         <form id="contactForm">
                             <div class="row g-3">
                                 <div class="col-sm-6">
@@ -781,6 +826,147 @@
                     scrollTop: $('#formMessage').offset().top - 100
                 }, 500);
             }
+        });
+    </script>
+
+    <!-- Services Modal -->
+    <div class="modal fade" id="servicesModal" tabindex="-1" aria-labelledby="servicesModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #5684AE; color: white;">
+                    <h2 class="modal-title fw-bold" id="servicesModalLabel">Our Services</h2>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="row g-4">
+                        <!-- Electrical -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card h-100 border-0 shadow-sm service-card" data-service="electrical" style="cursor: pointer; transition: transform 0.3s;">
+                                <img src="img/ELECTRICAL.jpeg" class="card-img-top" alt="Electrical" style="height: 200px; object-fit: cover;">
+                                <div class="card-body">
+                                    <h5 class="card-title text-uppercase fw-bold">Electrical</h5>
+                                    <p class="card-text">Repairs, fixture replacement, wiring issues, lighting upgrades.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Plumbing -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card h-100 border-0 shadow-sm service-card" data-service="plumbing" style="cursor: pointer; transition: transform 0.3s;">
+                                <img src="img/PLUMING.jpeg" class="card-img-top" alt="Plumbing" style="height: 200px; object-fit: cover;">
+                                <div class="card-body">
+                                    <h5 class="card-title text-uppercase fw-bold">Plumbing</h5>
+                                    <p class="card-text">Leaks, clogs, fixture installs, restroom repairs.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- HVAC -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card h-100 border-0 shadow-sm service-card" data-service="hvac" style="cursor: pointer; transition: transform 0.3s;">
+                                <img src="img/HVAC.jpeg" class="card-img-top" alt="HVAC" style="height: 200px; object-fit: cover;">
+                                <div class="card-body">
+                                    <h5 class="card-title text-uppercase fw-bold">HVAC</h5>
+                                    <p class="card-text">Seasonal maintenance, troubleshooting, emergency dispatch.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Locksmith -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card h-100 border-0 shadow-sm service-card" data-service="locksmith" style="cursor: pointer; transition: transform 0.3s;">
+                                <img src="img/LOCKSMITH.jpeg" class="card-img-top" alt="Locksmith" style="height: 200px; object-fit: cover;">
+                                <div class="card-body">
+                                    <h5 class="card-title text-uppercase fw-bold">Locksmith</h5>
+                                    <p class="card-text">Lock replacements, rekeys, access issues.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Painting -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card h-100 border-0 shadow-sm service-card" data-service="painting" style="cursor: pointer; transition: transform 0.3s;">
+                                <img src="img/PAINTING.jpeg" class="card-img-top" alt="Painting" style="height: 200px; object-fit: cover;">
+                                <div class="card-body">
+                                    <h5 class="card-title text-uppercase fw-bold">Painting</h5>
+                                    <p class="card-text">Interior/exterior touch-ups, full repaint, patch/paint combos.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Handyman -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card h-100 border-0 shadow-sm service-card" data-service="handyman" style="cursor: pointer; transition: transform 0.3s;">
+                                <img src="img/HANDYMAN.jpeg" class="card-img-top" alt="Handyman" style="height: 200px; object-fit: cover;">
+                                <div class="card-body">
+                                    <h5 class="card-title text-uppercase fw-bold">Handyman</h5>
+                                    <p class="card-text">Doors, ceiling tiles, shelving, signage, mounting.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Flooring -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card h-100 border-0 shadow-sm service-card" data-service="flooring" style="cursor: pointer; transition: transform 0.3s;">
+                                <img src="img/FLOORING.jpeg" class="card-img-top" alt="Flooring" style="height: 200px; object-fit: cover;">
+                                <div class="card-body">
+                                    <h5 class="card-title text-uppercase fw-bold">Flooring</h5>
+                                    <p class="card-text">Repairs and installations in tile, VCT, LVT, carpet, and more.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Janitorial -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card h-100 border-0 shadow-sm service-card" data-service="janitorial" style="cursor: pointer; transition: transform 0.3s;">
+                                <img src="img/JANITORIAL.jpeg" class="card-img-top" alt="Janitorial" style="height: 200px; object-fit: cover;">
+                                <div class="card-body">
+                                    <h5 class="card-title text-uppercase fw-bold">Janitorial</h5>
+                                    <p class="card-text">Deep cleaning, turnover prep, recurring cleans.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Pest Control -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card h-100 border-0 shadow-sm service-card" data-service="pest-control" style="cursor: pointer; transition: transform 0.3s;">
+                                <img src="img/PEST CONTROL.jpeg" class="card-img-top" alt="Pest Control" style="height: 200px; object-fit: cover;">
+                                <div class="card-body">
+                                    <h5 class="card-title text-uppercase fw-bold">Pest Control</h5>
+                                    <p class="card-text">General pest services, one-time or scheduled.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Pressure Washing -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card h-100 border-0 shadow-sm service-card" data-service="pressure-washing" style="cursor: pointer; transition: transform 0.3s;">
+                                <img src="img/WASHING.jpeg" class="card-img-top" alt="Pressure Washing" style="height: 200px; object-fit: cover;">
+                                <div class="card-body">
+                                    <h5 class="card-title text-uppercase fw-bold">Pressure Washing</h5>
+                                    <p class="card-text">Storefronts, sidewalks, dumpster pads, parking lots.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Service card click handler
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const serviceId = this.getAttribute('data-service');
+                // Close modal
+                const modal = bootstrap.Modal.getInstance(document.getElementById('servicesModal'));
+                if (modal) {
+                    modal.hide();
+                }
+                // Navigate to services page with anchor
+                setTimeout(() => {
+                    window.location.href = 'services.html#' + serviceId;
+                }, 300);
+            });
+            // Hover effect
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
         });
     </script>
 </body>
