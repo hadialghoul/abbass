@@ -333,7 +333,8 @@ body > #spinner + .container-fluid {
     object-fit: cover;
 }
 
-.carousel .carousel-item:first-child img {
+.carousel .carousel-item:first-child img,
+.carousel .carousel-item:nth-child(3) img {
     object-position: center top;
 }
 
