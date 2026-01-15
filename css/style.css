@@ -35,6 +35,10 @@
     visibility: hidden;
     transition: opacity .5s ease-out, visibility 0s linear .5s;
     z-index: 99999;
+    margin: 0 !important;
+    padding: 0 !important;
+    top: 0 !important;
+    left: 0 !important;
 }
 
 #spinner.show {
@@ -109,6 +113,13 @@
     transition: .5s;
 }
 
+html {
+    margin: 0 !important;
+    padding: 0 !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
 html, body {
     margin: 0;
     padding: 0;
@@ -118,6 +129,21 @@ html, body {
 body {
     margin-top: 0 !important;
     padding-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+#spinner {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    top: 0 !important;
+}
+
+.container-fluid.topbar {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
 }
 
 .container-fluid.bg-dark {
