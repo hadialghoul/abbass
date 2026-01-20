@@ -25,6 +25,15 @@
         }
     });
 
+    // Premium Navbar Scroll Effect
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 50) {
+            $('.navbar-wrapper').addClass('scrolled');
+        } else {
+            $('.navbar-wrapper').removeClass('scrolled');
+        }
+    });
+
 
     // Facts counter
     $('[data-toggle="counter-up"]').counterUp({
