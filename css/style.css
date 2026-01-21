@@ -783,10 +783,10 @@ body > #spinner + .container-fluid {
 /* Topbar (white, compact) */
 .topbar-wrapper {
     background: #ffffff;
-    padding: 8px 0;
+    padding: 6px 0;
     margin-top: 0 !important;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.06);
+    border-bottom: none;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.04);
     position: relative;
 }
 
@@ -844,11 +844,11 @@ body > #spinner + .container-fluid {
 
 .topbar-item i {
     color: #5684AE;
-    font-size: 13px;
-    width: 18px;
+    font-size: 12px;
+    width: 16px;
     text-align: center;
     background: rgba(86, 132, 174, 0.12);
-    padding: 5px;
+    padding: 4px;
     border-radius: 50%;
     transition: all 0.4s ease;
 }
@@ -867,12 +867,12 @@ body > #spinner + .container-fluid {
 .navbar-wrapper {
     background: #ffffff;
     padding: 0;
-    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
     position: sticky;
     top: 0;
     z-index: 1000;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    border-bottom: none;
 }
 
 .navbar-wrapper::after {
@@ -897,7 +897,7 @@ body > #spinner + .container-fluid {
 
 .navbar-logo {
     text-decoration: none;
-    padding: 10px 0;
+    padding: 8px 0;
     display: flex;
     align-items: center;
     position: relative;
@@ -921,11 +921,11 @@ body > #spinner + .container-fluid {
 }
 
 .navbar-logo h1 {
-    font-size: 30px;
+    font-size: 26px;
     font-weight: 800;
     color: #5684AE;
     margin: 0;
-    letter-spacing: 1.2px;
+    letter-spacing: 1px;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     text-shadow: none;
 }
@@ -950,8 +950,8 @@ body > #spinner + .container-fluid {
 .navbar-nav .nav-link {
     color: #2c3e50;
     font-weight: 600;
-    font-size: 14px;
-    padding: 12px 12px;
+    font-size: 13.5px;
+    padding: 10px 10px;
     text-decoration: none;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
@@ -1098,15 +1098,15 @@ body > #spinner + .container-fluid {
 .btn-cta {
     background: #5684AE;
     color: #ffffff;
-    padding: 10px 20px;
+    padding: 8px 18px;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 700;
-    font-size: 12px;
+    font-size: 11.5px;
     text-transform: uppercase;
-    letter-spacing: 0.8px;
+    letter-spacing: 0.7px;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 8px 18px rgba(86, 132, 174, 0.25);
+    box-shadow: 0 6px 14px rgba(86, 132, 174, 0.25);
     display: inline-block;
     position: relative;
     overflow: hidden;
@@ -1164,11 +1164,11 @@ body > #spinner + .container-fluid {
 }
 
 .navbar-wrapper.scrolled .navbar-logo h1 {
-    font-size: 28px;
+    font-size: 24px;
 }
 
 .navbar-wrapper.scrolled .navbar-nav .nav-link {
-    padding: 12px 14px;
+    padding: 8px 10px;
 }
 
 /* Responsive Styles */
