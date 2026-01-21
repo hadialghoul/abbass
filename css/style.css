@@ -452,6 +452,74 @@ body > #spinner + .container-fluid {
     transform: scale(1.1);
 }
 
+/*** How It Works - Professional Design ***/
+.process-card {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    padding: 40px 30px;
+    text-align: center;
+    height: 100%;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.process-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(86, 132, 174, 0.15);
+    border-color: rgba(86, 132, 174, 0.3);
+}
+
+.process-number {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 48px;
+    font-weight: 900;
+    color: rgba(86, 132, 174, 0.08);
+    line-height: 1;
+    letter-spacing: -2px;
+}
+
+.process-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 25px;
+    background: linear-gradient(135deg, #5684AE 0%, #4a7399 100%);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    box-shadow: 0 8px 20px rgba(86, 132, 174, 0.25);
+    transition: all 0.3s ease;
+}
+
+.process-card:hover .process-icon {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 12px 30px rgba(86, 132, 174, 0.35);
+}
+
+.process-icon i {
+    font-size: 36px;
+}
+
+.process-card h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    letter-spacing: 0.8px;
+}
+
+.process-card p {
+    color: #6b7280;
+    line-height: 1.7;
+    font-size: 15px;
+    margin: 0;
+}
+
 
 /*** Features ***/
 .feature {
