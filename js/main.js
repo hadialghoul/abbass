@@ -91,6 +91,17 @@
             '<i class="bi bi-arrow-right"></i>'
         ]
     });
+
+    // Smooth scroll for process cards to contact section
+    $('.process-card-link').click(function(e) {
+        e.preventDefault();
+        var target = $(this).attr('href');
+        if (target) {
+            $('html, body').animate({
+                scrollTop: $(target).offset().top - 100
+            }, 800, 'easeInOutExpo');
+        }
+    });
     
 })(jQuery);
 
