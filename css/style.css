@@ -121,20 +121,22 @@
 }
 
 .hero-menu {
-    margin-left: -110px;
+    margin-left: -160px;
+    transform: translateX(-70px);
 }
 
 .hero-nav-links {
-    margin-left: -70px;
+    margin-left: -220px;
 }
 
 @media (min-width: 993px) {
     .hero-menu {
-        margin-left: -130px;
+        margin-left: -180px;
+        transform: translateX(-70px);
     }
     
     .hero-nav-links {
-        margin-left: -90px;
+        transform: translateX(-70px) !important;
     }
     
     .hero-caption-content {
@@ -221,6 +223,7 @@
     padding: 0;
     flex-direction: row;
     flex-wrap: wrap;
+    transform: translateX(-70px);
 }
 
 .hero-nav-links li {
@@ -332,6 +335,7 @@
     transition: all 0.3s ease;
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
+    margin-left: 0;
 }
 
 .hero-cta-btn:hover {
