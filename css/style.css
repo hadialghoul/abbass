@@ -912,6 +912,18 @@
     color: #ffffff !important;
 }
 
+.footer-our-office {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-our-office p {
+    display: flex !important;
+    align-items: flex-start;
+    margin-bottom: 0.75rem;
+    width: 100%;
+}
+
 /*** Navbar ***/
 .sticky-top {
     top: -100px;
