@@ -152,6 +152,37 @@
     margin-top: 0;
 }
 
+/* Dark header nav links */
+.hero-header-bar .hero-nav-links a {
+    color: #ffffff !important;
+}
+
+.hero-header-bar .hero-nav-links a:hover,
+.hero-header-bar .hero-nav-links a.active,
+.hero-header-bar .hero-nav-links .dropdown-toggle.active {
+    color: #2A3E5C !important;
+}
+
+.hero-header-bar .hero-cta-btn {
+    background: #2A3E5C !important;
+    color: #ffffff !important;
+}
+
+.hero-header-bar .hero-cta-btn:hover {
+    background: #1e2d42 !important;
+    color: #ffffff !important;
+}
+
+.hero-caption .btn-primary {
+    background: #2A3E5C !important;
+    border-color: #2A3E5C !important;
+}
+
+.hero-caption .btn-primary:hover {
+    background: #1e2d42 !important;
+    border-color: #1e2d42 !important;
+}
+
 @media (max-width: 992px) {
     .hero-nav {
         width: 100%;
@@ -1710,6 +1741,88 @@ body > #spinner + .container-fluid {
     content: none;
 }
 
+/* Topbar responsive - tablet and medium screens */
+@media (max-width: 1200px) {
+    .topbar-left {
+        margin-left: -100px;
+    }
+    
+    .topbar-right {
+        margin-right: -60px;
+    }
+    
+    .topbar-left,
+    .topbar-right {
+        gap: 20px;
+    }
+    
+    .topbar-item {
+        font-size: 12px;
+    }
+    
+    .topbar-item span {
+        white-space: normal;
+    }
+}
+
+@media (max-width: 1100px) {
+    .topbar-content {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+    
+    .topbar-left {
+        margin-left: 0;
+    }
+    
+    .topbar-right {
+        margin-right: 0;
+    }
+    
+    .topbar-left,
+    .topbar-right {
+        gap: 15px;
+    }
+    
+    .topbar-item {
+        font-size: 11px;
+        padding: 4px 8px;
+    }
+}
+
+@media (max-width: 992px) {
+    .topbar-wrapper {
+        padding: 8px 0;
+    }
+    
+    .topbar-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .topbar-left,
+    .topbar-right {
+        flex-direction: column;
+        gap: 8px;
+        width: 100%;
+        align-items: flex-start;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
+    .topbar-item {
+        font-size: 12px;
+        padding: 6px 8px;
+        width: 100%;
+        justify-content: flex-start;
+    }
+    
+    .topbar-item span {
+        flex: 1;
+    }
+}
+
 .topbar-content {
     display: flex;
     justify-content: space-between;
@@ -1724,14 +1837,14 @@ body > #spinner + .container-fluid {
     display: flex;
     align-items: center;
     gap: 35px;
-    margin-left: -230px;
+    margin-left: -180px;
 }
 
 .topbar-right {
     display: flex;
     align-items: center;
     gap: 35px;
-    margin-right: -150px;
+    margin-right: -120px;
 }
 
 .topbar-item {
