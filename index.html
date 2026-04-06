@@ -65,7 +65,17 @@
     
     <!-- Hero Section Start -->
     <div class="hero-section">
-        <img src="img/main2.jpg" alt="Hero" class="hero-image">
+        <!-- Custom Carousel -->
+        <div class="custom-carousel" id="customCarousel">
+            <div class="carousel-slides">
+                <div class="carousel-slide" style="background-image: url('img/top1.jpg'); background-position: center 20%;" data-caption="Your Go-To Provider for End-to-End Trade Services Across the U.S."></div>
+                <div class="carousel-slide" style="background-image: url('img/top2.jpg');" data-caption="RELIABILITY IN EVERY TRADE."></div>
+                <div class="carousel-slide" style="background-image: url('img/top3.jpg'); background-position: center 20%;" data-caption="QUALITY-FIRST SERVICE, EVERY TIME."></div>
+            </div>
+            <button class="carousel-control prev" aria-label="Previous slide">‹</button>
+            <button class="carousel-control next" aria-label="Next slide">›</button>
+            <div class="carousel-indicators" aria-hidden="true"></div>
+        </div>
         <div class="hero-overlay"></div>
         <!-- Desktop Navigation -->
         <div class="hero-nav desktop-nav">
@@ -878,6 +888,81 @@
                 }, 500);
             }
         });
+    </script>
+    <script>
+        // Simple vanilla JS carousel for the homepage
+        (function() {
+            const carousel = document.getElementById('customCarousel');
+            if (!carousel) return;
+            const slidesWrap = carousel.querySelector('.carousel-slides');
+            const slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
+            const prevBtn = carousel.querySelector('.carousel-control.prev');
+            const nextBtn = carousel.querySelector('.carousel-control.next');
+            const indicatorsWrap = carousel.querySelector('.carousel-indicators');
+            let current = 0;
+            let timer = null;
+
+            // build indicators
+            slides.forEach((s, i) => {
+                const b = document.createElement('button');
+                b.type = 'button';
+                if (i === 0) b.classList.add('active');
+                b.addEventListener('click', () => goTo(i));
+                indicatorsWrap.appendChild(b);
+            });
+
+            const indicators = Array.from(indicatorsWrap.children);
+
+
+            function update() {
+                // cross-fade: toggle active class on slides
+                slides.forEach((s, i) => {
+                    const isActive = i === current;
+                    s.classList.toggle('active', isActive);
+                    s.setAttribute('aria-hidden', isActive ? 'false' : 'true');
+                });
+                indicators.forEach((btn, i) => btn.classList.toggle('active', i === current));
+                const caption = slides[current].getAttribute('data-caption') || '';
+                // Also update any hero caption headings so the main page heading changes with the carousel
+                const heroHeadings = document.querySelectorAll('.hero-caption-content h1');
+                heroHeadings.forEach(h => {
+                    try {
+                        h.textContent = caption;
+                    } catch (e) {
+                        // ignore if element is not writable for some reason
+                    }
+                });
+                // no side list active state (side list removed)
+            }
+
+            function goTo(i) {
+                current = (i + slides.length) % slides.length;
+                update();
+                restartTimer();
+            }
+
+            function next() { goTo(current + 1); }
+            function prev() { goTo(current - 1); }
+
+            nextBtn.addEventListener('click', next);
+            prevBtn.addEventListener('click', prev);
+
+            function startTimer() {
+                timer = setInterval(next, 6000);
+            }
+            function restartTimer() {
+                if (timer) clearInterval(timer);
+                startTimer();
+            }
+
+            // pause on hover
+            carousel.addEventListener('mouseenter', () => { if (timer) clearInterval(timer); });
+            carousel.addEventListener('mouseleave', () => startTimer());
+
+            // init
+            update();
+            startTimer();
+        })();
     </script>
 
     <!-- Services Modal -->
