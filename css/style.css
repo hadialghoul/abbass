@@ -352,13 +352,75 @@
     border-radius: 4px;
 }
 
+.hero-nav-links a {
+    /* Make nav links have the same background as the REQUEST SERVICE button */
+    background: #2A3E5C;
+    color: #ffffff;
+}
+
 .hero-nav-links a:hover,
 .hero-nav-links a.active {
     color: #ffffff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    /* Darker hover state (matches .hero-cta-btn:hover) */
+    background: #1e2d42;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+/* Pages that should NOT use the CTA background on nav hover (keep original look) */
+.no-cta-bg .hero-nav-links a {
+    background: transparent !important;
+    color: #ffffff !important;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5) !important;
+}
+.no-cta-bg .hero-nav-links a:hover,
+.no-cta-bg .hero-nav-links a.active {
+    /* restore original subtle hover (light translucent) */
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7) !important;
+}
+
+/* Specifically prevent dropdown toggle (the control that opens the menu) from using CTA blue */
+.no-cta-bg .hero-header-bar .hero-nav-links .dropdown-toggle,
+.no-cta-bg .hero-header-bar .hero-nav-links .dropdown-toggle:hover,
+.no-cta-bg .hero-header-bar .hero-nav-links .dropdown-toggle.active {
+    background: transparent !important;
+    color: #ffffff !important;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* If the open state adds .show to the dropdown or navbar collapse, ensure the toggle stays non-blue */
+.no-cta-bg .hero-header-bar .hero-nav-links .dropdown.show > .dropdown-toggle {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+}
+
+/* Make dropdown menus white and dropdown items dark (override CTA blue applied globally) */
+.hero-nav-links .dropdown-menu {
+    background: #ffffff !important;
+    color: #2A3E5C !important;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    border: 0 !important;
+    padding: 8px 0 !important;
+}
+.hero-nav-links .dropdown-menu .dropdown-item {
+    color: #2A3E5C !important;
+    background: transparent !important;
+    padding: 8px 20px !important;
+    text-transform: none !important;
+    font-weight: 600 !important;
+}
+.hero-nav-links .dropdown-menu .dropdown-item:hover,
+.hero-nav-links .dropdown-menu .dropdown-item:focus {
+    background: rgba(42,62,92,0.06) !important; /* subtle tinted hover */
+    color: #1e2d42 !important;
+}
+
+/* If a page has .no-cta-bg, ensure dropdown menu still appears white (consistent) */
+.no-cta-bg .hero-nav-links .dropdown-menu {
+    background: #ffffff !important;
 }
 
 .hero-nav-links a::after {
@@ -1729,7 +1791,8 @@ body > #spinner + .container-fluid {
 /* Topbar (white, compact) */
 .topbar-wrapper {
     background: #2A3E5C;
-    padding: 6px 0;
+    /* increased padding to make topbar taller */
+    padding: 14px 0;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
     border-bottom: none;
@@ -1792,7 +1855,8 @@ body > #spinner + .container-fluid {
 
 @media (max-width: 992px) {
     .topbar-wrapper {
-        padding: 8px 0;
+        /* increased for smaller screens as well */
+        padding: 12px 0;
     }
     
     .topbar-content {
@@ -1837,14 +1901,16 @@ body > #spinner + .container-fluid {
     display: flex;
     align-items: center;
     gap: 35px;
-    margin-left: -180px;
+    /* removed negative offset so left group moves inward (to the right) */
+    margin-left: -220PX;
 }
 
 .topbar-right {
     display: flex;
     align-items: center;
-    gap: 35px;
-    margin-right: -120px;
+    gap: 20px;
+    /* removed negative offset so right group moves inward (to the left) */
+    margin-right: -90PX;
 }
 
 .topbar-item {
@@ -1897,6 +1963,18 @@ body > #spinner + .container-fluid {
 .topbar-item:hover i {
     background: rgba(255, 255, 255, 0.3);
     transform: scale(1.05);
+}
+
+/* Nudge the address slightly to the right */
+.topbar-address {
+    margin-left: 40px;
+}
+
+@media (max-width: 992px) {
+    /* When stacked on mobile, remove the left margin */
+    .topbar-address {
+        margin-left: 0;
+    }
 }
 
 /* Navbar (white, compact) */
