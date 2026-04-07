@@ -1320,7 +1320,7 @@ body > #spinner + .container-fluid {
 .navbar .navbar-nav .nav-link {
     margin-right: 35px;
     padding: 15px 0;
-    color: white;
+    color: #2A3E5C;
     font-size: 16px;
     text-transform: uppercase;
     font-weight: 600;
@@ -1329,8 +1329,8 @@ body > #spinner + .container-fluid {
 
 .navbar .navbar-nav .nav-link:hover,
 .navbar .navbar-nav .nav-link.active {
-    color: white;
-    opacity: 0.8;
+    color: #1f2f45;
+    opacity: 1;
 }
 
 .navbar .dropdown-toggle::after {
@@ -1363,13 +1363,19 @@ body > #spinner + .container-fluid {
         opacity: 0;
         visibility: hidden;
         transition: .5s;
+        z-index: 1055;
     }
 
+    .navbar .nav-item:hover .dropdown-menu,
     .navbar .nav-item.show .dropdown-menu {
         top: 100%;
         visibility: visible;
         transition: .5s;
         opacity: 1;
+    }
+
+    .navbar .nav-item {
+        position: relative;
     }
 }
 
@@ -2275,7 +2281,9 @@ body > #spinner + .container-fluid {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     animation: fadeInDown 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    overflow: hidden;
+    max-height: 70vh;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .navbar-nav .dropdown-menu::before {
