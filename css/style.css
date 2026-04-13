@@ -1434,6 +1434,11 @@ body > #spinner + .container-fluid {
     object-fit: cover;
 }
 
+.carousel .carousel-item .display-1 {
+    font-size: 4.4rem;
+    line-height: 1.1;
+}
+
 @media (max-width: 992px) {
     .carousel .carousel-item {
         height: 560px;
@@ -1450,6 +1455,10 @@ body > #spinner + .container-fluid {
 
     .carousel .carousel-caption {
         padding-left: 10rem;
+    }
+
+    .carousel .carousel-item .display-1 {
+        font-size: 3rem;
     }
 }
 
@@ -1470,11 +1479,15 @@ body > #spinner + .container-fluid {
     .carousel .carousel-caption {
         padding-left: 9rem;
     }
+
+    .carousel .carousel-item .display-1 {
+        font-size: 2rem;
+    }
 }
 
 @media (min-width: 1200px) {
     .carousel .carousel-item .display-1 {
-        font-size: 7rem;
+        font-size: 5.8rem;
     }
 }
 
