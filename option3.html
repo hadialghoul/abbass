@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary": "#5f1500",
+                        "surface-container-low": "#191c1e",
+                        "on-error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#b5c4ff",
+                        "on-background": "#e0e3e6",
+                        "on-primary-fixed": "#161b29",
+                        "error": "#ffb4ab",
+                        "tertiary-fixed-dim": "#ffb5a0",
+                        "surface-container-lowest": "#0b0f11",
+                        "primary-fixed": "#dee2f5",
+                        "surface-container-high": "#272a2d",
+                        "tertiary-container": "#250400",
+                        "on-tertiary-fixed": "#3b0900",
+                        "on-primary-fixed-variant": "#424656",
+                        "tertiary": "#ffb5a0",
+                        "surface-bright": "#363a3c",
+                        "outline-variant": "#46464c",
+                        "background": "#101416",
+                        "secondary-fixed": "#dbe1ff",
+                        "surface-tint": "#c2c6d8",
+                        "on-tertiary-fixed-variant": "#862200",
+                        "inverse-surface": "#e0e3e6",
+                        "inverse-primary": "#595e6e",
+                        "primary": "#c2c6d8",
+                        "outline": "#909096",
+                        "primary-container": "#0a0f1c",
+                        "on-primary": "#2b303e",
+                        "on-surface-variant": "#c6c6cc",
+                        "on-secondary": "#00297a",
+                        "primary-fixed-dim": "#c2c6d8",
+                        "on-surface": "#e0e3e6",
+                        "secondary": "#b5c4ff",
+                        "error-container": "#93000a",
+                        "on-secondary-container": "#d8dfff",
+                        "secondary-container": "#0055ea",
+                        "surface-container": "#1d2022",
+                        "surface": "#101416",
+                        "on-error": "#690005",
+                        "surface-variant": "#323538",
+                        "surface-dim": "#101416",
+                        "on-primary-container": "#777b8c",
+                        "on-secondary-fixed": "#00174d",
+                        "on-tertiary-container": "#e1420a",
+                        "on-secondary-fixed-variant": "#003cac",
+                        "inverse-on-surface": "#2d3133",
+                        "tertiary-fixed": "#ffdbd1",
+                        "surface-container-highest": "#323538"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(50, 53, 56, 0.7);
+            backdrop-filter: blur(20px);
+        }
+        .glow-button:hover {
+            box-shadow: 0 0 15px rgba(0, 85, 234, 0.5);
+        }
+        .void-bg {
+            background: radial-gradient(circle at center, #101416 0%, #0a0f1c 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-secondary-container selection:text-white">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-slate-950/70 backdrop-blur-xl shadow-2xl shadow-blue-500/10">
+<div class="flex justify-between items-center px-8 h-20 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-bold tracking-tighter text-slate-50 font-headline">PrimeFix USA</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-slate-400 hover:text-slate-100 transition-colors font-headline font-bold tracking-tight" href="#">Dashboard</a>
+<a class="text-blue-500 border-b-2 border-blue-500 pb-1 font-headline font-bold tracking-tight" href="#">Services</a>
+<a class="text-slate-400 hover:text-slate-100 transition-colors font-headline font-bold tracking-tight" href="#">Assets</a>
+<a class="text-slate-400 hover:text-slate-100 transition-colors font-headline font-bold tracking-tight" href="#">Schedule</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="px-6 py-2 bg-secondary-container text-white rounded-md font-bold text-sm glow-button transition-all">Request Service</button>
+<button class="hidden lg:block px-6 py-2 border border-outline-variant/20 text-on-surface rounded-md font-bold text-sm hover:bg-white/5 transition-all">Call Now</button>
+</div>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[870px] flex items-center overflow-hidden void-bg">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-20 mix-blend-luminosity" data-alt="Close-up of industrial electrical panel with organized wiring and dramatic blue lighting, conveying precision engineering and technical expertise." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJM4HL6OCPankttKkXnT5rNaQbFqUe_Xkg3zLdWnR37Je1JsxW1_q0vnTF57-XvCfcs8fRRqA2hzlMKx9HyhcLDRb-_GpkVMgWzGytgS7DziZXFTpiP0WAO5yIozmxhzqJsrOr8-3zyIxkQtlCsC6x9xjbnkNtjfpe8vSs6S-Do0bjNa-hKaGwvVdz-mNBP_hgpgKPX_GHbnIW-0k52je_0TGEqmAVylD0rDY_wZlass8EQOTnF-kstU-8utw0Ti53qSffzsauO6cn"/>
+</div>
+<div class="relative z-10 max-w-screen-2xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-7">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-secondary-container/10 border border-secondary-container/20 rounded-md mb-6">
+<span class="flex h-2 w-2 relative">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
+</span>
+<span class="text-xs font-bold uppercase tracking-widest text-secondary">Operating System for Reliable Spaces</span>
+</div>
+<h1 class="text-6xl lg:text-8xl font-headline font-bold tracking-tighter leading-none mb-8">
+                        Surgical Precision for Your <span class="text-secondary-container">Power Systems.</span>
+</h1>
+<p class="text-xl text-on-surface-variant max-w-xl mb-10 leading-relaxed font-light">
+                        Industrial-grade electrical infrastructure management. We deploy elite journeymen and advanced diagnostics to eliminate failure before it manifests.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="px-8 py-4 bg-gradient-to-r from-on-secondary-fixed-variant to-secondary-container text-white font-bold rounded-md glow-button">
+                            Dispatch Emergency Team
+                        </button>
+<button class="px-8 py-4 bg-surface-container-low border border-outline-variant/10 text-on-surface font-bold rounded-md hover:bg-surface-container-high transition-all">
+                            View Capability Deck
+                        </button>
+</div>
+</div>
+<div class="lg:col-span-5 grid grid-cols-2 gap-4">
+<div class="p-6 glass-panel rounded-xl border border-outline-variant/10">
+<div class="text-4xl font-headline font-bold text-secondary mb-2">99.9%</div>
+<div class="text-xs uppercase tracking-widest font-bold opacity-60">System Uptime</div>
+</div>
+<div class="p-6 glass-panel rounded-xl border border-outline-variant/10 mt-8">
+<div class="text-4xl font-headline font-bold text-secondary mb-2">15m</div>
+<div class="text-xs uppercase tracking-widest font-bold opacity-60">Avg Response</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Common Problems (Bento Grid) -->
+<section class="py-24 px-8 max-w-screen-2xl mx-auto">
+<div class="flex justify-between items-end mb-16">
+<div class="max-w-2xl">
+<h2 class="text-4xl font-headline font-bold tracking-tight mb-4">Infrastructure Vulnerabilities</h2>
+<p class="text-on-surface-variant">Don't wait for the arc. We identify and neutralize common failure points in commercial and residential grids.</p>
+</div>
+<div class="hidden md:block text-right">
+<span class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Diagnostic Catalog</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Short Circuits -->
+<div class="md:col-span-2 group p-8 rounded-2xl bg-surface-container-low border border-outline-variant/10 hover:border-secondary/30 transition-all">
+<div class="flex justify-between items-start mb-12">
+<span class="material-symbols-outlined text-4xl text-secondary" style="font-variation-settings: 'FILL' 1;">electric_bolt</span>
+<div class="text-on-tertiary-container bg-tertiary-container px-3 py-1 rounded text-[10px] font-bold uppercase tracking-widest">High Risk</div>
+</div>
+<h3 class="text-2xl font-headline font-bold mb-4">Short Circuits &amp; Ground Faults</h3>
+<p class="text-on-surface-variant leading-relaxed max-w-md">Intermittent power loss or burning smells are precursors to catastrophic failure. Our team uses circuit analyzers to trace faults within centimeters.</p>
+</div>
+<!-- Outlets -->
+<div class="p-8 rounded-2xl bg-surface-container-low border border-outline-variant/10 hover:border-secondary/30 transition-all flex flex-col">
+<span class="material-symbols-outlined text-4xl text-secondary mb-12">power</span>
+<h3 class="text-2xl font-headline font-bold mb-4">Outdated Terminals</h3>
+<p class="text-on-surface-variant leading-relaxed">Loose receptacles and ungrounded outlets cause 40,000+ fires annually. We modernize every point of contact.</p>
+</div>
+<!-- Panel Upgrades -->
+<div class="p-8 rounded-2xl bg-surface-container-low border border-outline-variant/10 hover:border-secondary/30 transition-all flex flex-col">
+<span class="material-symbols-outlined text-4xl text-secondary mb-12">settings_input_component</span>
+<h3 class="text-2xl font-headline font-bold mb-4">Panel Constraints</h3>
+<p class="text-on-surface-variant leading-relaxed">Modern loads exceed legacy panel capacities. We deploy smart load-center technology.</p>
+</div>
+<!-- Commercial Grid -->
+<div class="md:col-span-2 relative overflow-hidden rounded-2xl bg-surface-container-low border border-outline-variant/10 h-[300px]">
+<img class="absolute inset-0 w-full h-full object-cover opacity-40 grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="Engineer in reflective gear inspecting a high-voltage server room infrastructure with specialized measuring equipment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVhEp5kwWMZ-3FVdfSpwgUzM7YZpYdHe3fLEKeI-cEn-nI77uEythXGp8e3KHOBGl5xrFp1Mz2JKjgN1QOqqpXRWerA6aQDzkzVwZci5iMWZAbetxKJ652XUnD5axjdcH3LstJcIZyNRlFD7dYccmorE7fwMigQ5EIQPa2G2u1SkRhqMm0I1iC_pdaxYf2S0EWvZpwSHW_NZDEcJ221r-xa7_Y0JzE2NPRj2fcoC3WXIf34CNeXHZ81MMvqdm6jxeH8m9KjXFVaqq3"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent p-8 flex flex-col justify-end">
+<h3 class="text-2xl font-headline font-bold mb-2">Phase Balancing</h3>
+<p class="text-on-surface-variant max-w-md">Optimizing commercial voltage distribution to prevent equipment overheating and energy waste.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- What We Fix / Why Us -->
+<section class="py-24 bg-surface-container-lowest relative overflow-hidden">
+<div class="max-w-screen-2xl mx-auto px-8 relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div>
+<h2 class="text-4xl font-headline font-bold tracking-tight mb-8">Authoritative Intelligence.</h2>
+<div class="space-y-12">
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 rounded bg-secondary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary">visibility</span>
+</div>
+<div>
+<h4 class="text-xl font-headline font-bold mb-2 text-on-surface">Thermal Imaging Diagnostics</h4>
+<p class="text-on-surface-variant leading-relaxed">We see what's invisible. Our technicians use FLIR thermal scanners to detect heat signatures in walls before they become ignition points.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 rounded bg-secondary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary">verified_user</span>
+</div>
+<div>
+<h4 class="text-xl font-headline font-bold mb-2 text-on-surface">Certified Journeymen Only</h4>
+<p class="text-on-surface-variant leading-relaxed">No apprentices left unsupervised. Every dispatch includes a master or journeyman electrician with 10,000+ hours of documented site experience.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 rounded bg-secondary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary">analytics</span>
+</div>
+<div>
+<h4 class="text-xl font-headline font-bold mb-2 text-on-surface">OSHA Compliance Audits</h4>
+<p class="text-on-surface-variant leading-relaxed">We provide full documentation for every repair, ensuring your facility meets or exceeds local NEC and NFPA 70E standards.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="aspect-square rounded-3xl overflow-hidden border border-outline-variant/10 shadow-2xl">
+<img class="w-full h-full object-cover" data-alt="Macro photo of a high-tech circuit board with glowing blue indicators and copper pathways, symbolizing digital architecture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxWYHvrIlCwV7eka-bPOjGq5mllUthp8v6-ezocosdyg2T4Apg93bqazE2MS78O8OY3Rsq76lYIGaD_HVUwYe-FDlkjDC8ESdsnmKMp6uPF_9KIEHF28VyW10k_nZCBHrqZld8dXeREPJSGGPpyF2nzLr2bUTVio8zU_0hRPzluYu02ZXnzVPlpITLetrYzjTuPFE91_dT4RsXCMuTjTBJWlF17FfdVfuFHu26FzwpQwSEbnr5cRcieuP67sf1TBIb6URyAuLkxEZ3"/>
+</div>
+<div class="absolute -bottom-10 -left-10 glass-panel p-8 rounded-2xl border border-secondary/20 shadow-2xl max-w-xs">
+<p class="text-sm font-headline italic mb-4">"PrimeFix identified a critical neutral fault in our main distribution frame that three other companies missed. They saved our data center from a total meltdown."</p>
+<div class="text-xs font-bold uppercase tracking-widest text-secondary">CTO, Nexus Logistics</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Process & FAQ -->
+<section class="py-24 px-8 max-w-screen-2xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+<div class="lg:col-span-4">
+<h2 class="text-4xl font-headline font-bold mb-6">Tactical Deployment</h2>
+<p class="text-on-surface-variant mb-12">Our methodology is designed for minimal disruption and maximum transparency.</p>
+<div class="space-y-4">
+<div class="p-6 bg-surface-container rounded-xl border-l-4 border-secondary">
+<div class="text-xs font-bold uppercase text-secondary mb-2">Step 01</div>
+<div class="font-bold">Digital Triaging</div>
+</div>
+<div class="p-6 bg-surface-container-low rounded-xl border-l-4 border-outline-variant/20">
+<div class="text-xs font-bold uppercase text-on-surface-variant mb-2">Step 02</div>
+<div class="font-bold">On-Site Discovery</div>
+</div>
+<div class="p-6 bg-surface-container-low rounded-xl border-l-4 border-outline-variant/20">
+<div class="text-xs font-bold uppercase text-on-surface-variant mb-2">Step 03</div>
+<div class="font-bold">Rapid Remediation</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-8">
+<h3 class="text-2xl font-headline font-bold mb-8">Technical FAQ</h3>
+<div class="space-y-6">
+<details class="group bg-surface-container-low p-6 rounded-xl border border-outline-variant/5">
+<summary class="list-none flex justify-between items-center cursor-pointer">
+<span class="font-bold text-lg">Do you handle industrial 3-phase power upgrades?</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="mt-4 text-on-surface-variant leading-relaxed">
+                                Yes. We specialize in industrial voltage transformations, motor control centers, and balancing high-density electrical loads for manufacturing facilities and server farms.
+                            </div>
+</details>
+<details class="group bg-surface-container-low p-6 rounded-xl border border-outline-variant/5">
+<summary class="list-none flex justify-between items-center cursor-pointer">
+<span class="font-bold text-lg">Is your work covered by a performance guarantee?</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="mt-4 text-on-surface-variant leading-relaxed">
+                                Every PrimeFix electrical intervention includes a 12-month "Zero-Fault" warranty and a digital diagnostic report for your insurance compliance records.
+                            </div>
+</details>
+<details class="group bg-surface-container-low p-6 rounded-xl border border-outline-variant/5">
+<summary class="list-none flex justify-between items-center cursor-pointer">
+<span class="font-bold text-lg">How quickly can you dispatch for an arc-fault emergency?</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="mt-4 text-on-surface-variant leading-relaxed">
+                                We maintain a 24/7 Rapid Response fleet. For critical infrastructure failures, our average arrival time is under 45 minutes within metro service zones.
+                            </div>
+</details>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-24 px-8">
+<div class="max-w-screen-2xl mx-auto p-16 rounded-[2rem] bg-secondary-container text-white relative overflow-hidden">
+<div class="absolute top-0 right-0 w-1/2 h-full opacity-10">
+<span class="material-symbols-outlined text-[30rem]" style="font-variation-settings: 'wght' 100;">bolt</span>
+</div>
+<div class="relative z-10 max-w-2xl">
+<h2 class="text-5xl font-headline font-bold mb-6 tracking-tight">Ready to fortify your grid?</h2>
+<p class="text-xl opacity-90 mb-10 leading-relaxed">Book a comprehensive system audit or request immediate emergency dispatch from our executive command center.</p>
+<div class="flex flex-wrap gap-4">
+<button class="px-10 py-5 bg-white text-secondary-container font-bold rounded-md hover:scale-105 transition-transform">
+                            Schedule Audit
+                        </button>
+<button class="px-10 py-5 border border-white/30 font-bold rounded-md hover:bg-white/10 transition-all">
+                            Talk to an Engineer
+                        </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-950 border-t border-slate-800/50 w-full py-16">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-8 max-w-screen-2xl mx-auto">
+<div class="col-span-1">
+<div class="text-xl font-bold text-slate-100 font-headline mb-6">PrimeFix USA</div>
+<p class="text-slate-500 font-['Inter'] text-sm tracking-wide leading-relaxed">The operating system for high-reliability physical spaces. Precision engineering for the modern built environment.</p>
+</div>
+<div>
+<h5 class="text-slate-100 font-bold mb-6 text-sm uppercase tracking-widest">Solutions</h5>
+<ul class="space-y-4">
+<li><a class="text-slate-500 hover:text-slate-300 transition-colors font-['Inter'] text-sm" href="#">HVAC Solutions</a></li>
+<li><a class="text-blue-500 font-semibold font-['Inter'] text-sm" href="#">Electrical Systems</a></li>
+<li><a class="text-slate-500 hover:text-slate-300 transition-colors font-['Inter'] text-sm" href="#">Plumbing</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-slate-100 font-bold mb-6 text-sm uppercase tracking-widest">Company</h5>
+<ul class="space-y-4">
+<li><a class="text-slate-500 hover:text-slate-300 transition-colors font-['Inter'] text-sm" href="#">Compliance</a></li>
+<li><a class="text-slate-500 hover:text-slate-300 transition-colors font-['Inter'] text-sm" href="#">Privacy Policy</a></li>
+<li><a class="text-slate-500 hover:text-slate-300 transition-colors font-['Inter'] text-sm" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-slate-100 font-bold mb-6 text-sm uppercase tracking-widest">Global HQ</h5>
+<p class="text-slate-500 font-['Inter'] text-sm leading-relaxed">
+                    1200 Innovation Way<br/>
+                    Austin, TX 78701<br/>
+                    United States
+                </p>
+</div>
+</div>
+<div class="max-w-screen-2xl mx-auto px-8 mt-16 pt-8 border-t border-slate-800/30">
+<p class="text-slate-500 font-['Inter'] text-sm tracking-wide">© 2024 PrimeFix USA. Operating System for Reliable Spaces.</p>
+</div>
+</footer>
+</body></html>

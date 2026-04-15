@@ -1,83 +1,81 @@
-# Design System Strategy: PrimeFix USA
+# Design System Specification: Executive Precision
 
-## 1. Overview & Creative North Star
-**The Creative North Star: "The Technical Authority"**
+## 1. Overview & Creative North Star: "The Digital Architect"
+This design system is engineered to function as the "Operating System for Reliable Spaces." It rejects the cluttered, reactive aesthetic of traditional maintenance software in favor of a proactive, high-fidelity experience. 
 
-To design for 'PrimeFix USA' is to balance the surgical precision of high-end hardware with the frictionless digital elegance of modern FinTech. We are moving beyond the "utility app" aesthetic to create a **High-End Editorial** experience. 
-
-The system rejects the cluttered, line-heavy interfaces of traditional service brands. Instead, we embrace **The Technical Authority**: a philosophy where confidence is expressed through massive typographic scale, aggressive whitespace, and a "layered glass" depth model. We break the standard template look by utilizing intentional asymmetry—placing oversized headlines against meticulously organized, high-density data grids.
+**The Creative North Star: The Digital Architect.**
+Imagine the precision of a Tesla cockpit combined with the editorial breathing room of an Apple product launch. We break the "standard template" look by utilizing heavy typographic weighting, intentional asymmetry, and "The Void"—using our Deep Navy (`primary_container`) not just as a background, but as a structural element that allows high-contrast data and glass-morphic components to "float" with executive authority.
 
 ---
 
-## 2. Colors & Surface Philosophy
-The palette is rooted in 'Deep Midnight' for authority, energized by 'Electric Blue' for action. However, the premium feel is executed through how these colors *interact*, not just their hex codes.
+## 2. Colors & Surface Architecture
+Our palette is rooted in deep obsidian tones and electric accents. The goal is to feel "always on" and high-voltage yet sophisticated.
+
+### Tonal Hierarchy
+*   **The Void (Primary Foundation):** `primary_container` (#0A0F1C) is the canvas. Use this for the deepest layers of the UI.
+*   **The Pulse (Accent):** `secondary_container` (#0055EA) and `secondary` (#B5C4FF) drive the "tech-enabled" energy. Use these for high-intent actions and active states.
+*   **The Alert (Urgency):** `tertiary_container` (#250400) and `on_tertiary_container` (#E1420A) are reserved strictly for critical failures or urgent dispatches.
 
 ### The "No-Line" Rule
-**Explicit Instruction:** Traditional 1px solid borders are strictly prohibited for sectioning or containment. Boundaries must be defined exclusively through background color shifts.
-*   **The Technique:** Place a `surface-container-low` (#f2f4f6) card against a `surface` (#f7f9fb) background. The subtle 2% shift in tonal value creates a sophisticated boundary that feels discovered rather than forced.
+**Explicit Instruction:** Prohibit the use of 1px solid borders for sectioning. 
+Structure must be defined through **Background Color Shifts**. To separate a sidebar from a main feed, transition from `surface_container_lowest` to `surface`. This creates a seamless, "milled from a single block" feel characteristic of premium hardware.
 
-### Surface Hierarchy & Nesting
-Treat the UI as a physical stack of materials. 
-*   **Level 0 (Base):** `surface` (#f7f9fb) – The canvas.
-*   **Level 1 (Sub-sections):** `surface-container-low` (#f2f4f6) – For grouping related content blocks.
-*   **Level 2 (Interactive Elements):** `surface-container-lowest` (#ffffff) – Used for primary cards and input fields to make them "pop" against the light gray base.
-
-### The "Glass & Gradient" Rule
-To mimic the premium finish of high-end hardware:
-*   **Hero Elements:** Use a subtle linear gradient for primary backgrounds, transitioning from `primary` (#000000 / Deep Midnight) to `primary-container` (#131b2e). This adds "soul" and prevents the flat, "dead" look of pure black/navy.
-*   **Floating Navigation:** Utilize Glassmorphism. Apply `surface` at 80% opacity with a `20px` backdrop-blur. This ensures the UI feels integrated into the environment rather than pasted on top.
+### The Glass & Gradient Rule
+To move beyond "flat" design, implement glassmorphism for all floating overlays (modals, dropdowns, navigation bars).
+*   **Glass Recipe:** `surface_container_highest` at 70% opacity + 20px Backdrop Blur.
+*   **Signature Gradients:** Use a subtle radial gradient on primary CTAs: `on_secondary_fixed_variant` (#003CAC) to `secondary_container` (#0055EA). This creates a "glow" that feels powered by electricity.
 
 ---
 
-## 3. Typography
-We use **Inter** as our typographic engine. The system relies on a "High-Contrast" scale where the gap between headlines and body text is intentionally dramatic to establish an editorial hierarchy.
+## 3. Typography: The Editorial Voice
+We pair the technical precision of **Space Grotesk** (Headings) with the Swiss-inspired clarity of **Inter** (Body).
 
-*   **Display-LG (3.5rem):** Reserved for Hero value propositions. Tracking should be set to `-0.02em` to create a "tight," professional locked-in look.
-*   **Headline-MD (1.75rem):** Used for section starts. Combined with generous top-padding, these act as visual anchors.
-*   **Body-LG (1.0rem):** Our workhorse. Ensure a line-height of `1.6` to maintain the "Stripe-esque" breathing room.
-*   **Label-SM (0.6875rem):** Always Uppercase with `+0.05em` letter spacing. Use `on-surface-variant` (#45464d) for metadata and overlines to provide an authoritative, technical feel.
-
----
-
-## 4. Elevation & Depth
-We eschew "Material" style drop shadows in favor of **Ambient Tonal Layering**.
-
-*   **The Layering Principle:** Use the `surface-container` tiers to create lift. A `surface-container-highest` element placed on a `surface` background creates a natural recession.
-*   **Ambient Shadows:** Where physical separation is required (e.g., a floating Modal), use an "Air-Shadow." 
-    *   *Spec:* `Y: 20px, Blur: 40px, Color: rgba(25, 28, 30, 0.06)`. This mimics natural light diffusion.
-*   **The "Ghost Border":** If accessibility requires a stroke (e.g., in high-contrast modes), use `outline-variant` (#c6c6cd) at **15% opacity**. It should be felt, not seen.
-*   **Corner Radii:** Apply `DEFAULT` (0.5rem / 8px) for small components (buttons, chips) and `lg` (1.0rem / 16px) for major containers. This creates a "nested" curvature logic.
+*   **Display & Headlines (Space Grotesk):** These are your "Architectural Statements." Use `display-lg` (3.5rem) with tight letter-spacing (-0.02em) for hero metrics and executive summaries. It should feel bold, geometric, and immutable.
+*   **Body & Titles (Inter):** Used for data density and reliability. `body-md` (0.875rem) is the workhorse for technical specs.
+*   **Hierarchy as Authority:** Use extreme scale contrast. A `display-sm` headline next to a `label-sm` creates a sophisticated, data-rich environment that feels like a command center.
 
 ---
 
-## 5. Components
+## 4. Elevation & Depth: Tonal Layering
+Traditional shadows are too "organic" for this system. We use **Tonal Layering** to convey z-index.
 
-### Buttons: The Kinetic Drivers
-*   **Primary:** Background: `secondary` (#0058be / Electric Blue). Text: `on-secondary` (#ffffff). Shape: `0.5rem`. Use a subtle inner-glow (1px white at 10% opacity) on the top edge to create a "premium hardware" button feel.
-*   **Secondary:** Background: `transparent`. Border: `Ghost Border` (15% opacity outline). Text: `secondary`.
-*   **Tertiary:** Text only, `primary` color, with a `label-md` weight.
-
-### Cards & Lists: The No-Line Content
-*   **Cards:** Forbid divider lines. Use `1.5rem` (xl) spacing between items. 
-*   **Lists:** Separate list items using a `surface-container-high` background on hover, rather than a line between rows.
-
-### Inputs: The Precision Fields
-*   **State:** Background should be `surface-container-lowest` (#ffffff). 
-*   **Focus:** A 2px `secondary` (#0058be) outer ring with a 4px blur. This makes the active field feel "energized."
-
-### Signature Component: The "Service Status" Chip
-*   A custom component using `tertiary-container` with a pulsing `secondary` dot. This reinforces the "Fix" aspect of the brand with a technical, real-time aesthetic.
+*   **The Layering Principle:** 
+    *   **Level 0 (Base):** `surface_container_lowest`
+    *   **Level 1 (Cards):** `surface_container_low`
+    *   **Level 2 (Active/Hover):** `surface_container_high`
+*   **Ambient Shadows:** For floating elements, use a 32px blur, 0px offset, at 8% opacity using the `on_background` color. This mimics the soft ambient glow of a high-end monitor in a dark room.
+*   **The "Ghost Border" Fallback:** If a boundary is legally or functionally required, use `outline_variant` (#46464C) at **15% opacity**. It should be felt, not seen.
 
 ---
 
-## 6. Do’s and Don’ts
+## 5. Components: Precision Primitives
+
+### Buttons: The "Power" State
+*   **Primary:** High-gloss gradient (`secondary_container` to `on_secondary_fixed_variant`). Corner radius: `md` (0.375rem). No border. On hover: Add an external 4px glow using `secondary`.
+*   **Secondary:** Ghost style. `outline_variant` at 20% opacity. Text in `on_surface`.
+*   **Tertiary:** Text only. `label-md` uppercase with 0.05em tracking.
+
+### Cards & Lists: The "Fluid Grid"
+*   **Forbid Dividers:** Do not use lines between list items. Use 12px of vertical padding (`spacing-md`) and a subtle hover shift to `surface_container_highest`.
+*   **Nesting:** Place `surface_container_high` cards inside a `surface_container_low` section to create natural focus.
+
+### Input Fields: The "Terminal" Look
+*   **Default:** `surface_container_lowest` background, `outline_variant` ghost border (10% opacity).
+*   **Focus:** Border transitions to `secondary` (#B5C4FF) with a 2px outer "aura" glow. Label moves to `label-sm` in `secondary` color.
+
+### Signature Component: The "Status Pulse"
+For PrimeFix, real-time reliability is key. Use a 12px circle with a `secondary` fill and a CSS animation of a scaling, 10% opacity ring to indicate "Active System Monitoring."
+
+---
+
+## 6. Do's and Don'ts
 
 ### Do:
-*   **Do** use asymmetrical margins. For example, a headline may have a 15% left-offset while the body text remains centered, creating a sophisticated editorial layout.
-*   **Do** prioritize vertical whitespace. If a section feels "almost right," add 24px more padding.
-*   **Do** use `on-surface-variant` for helper text to keep the visual noise low.
+*   **Embrace Asymmetry:** Align high-level stats to the far right while keeping navigation on the left. This breaks the "Wordpress" feel.
+*   **Use High-Contrast Scaling:** Make your big numbers *really* big (`display-lg`) and your labels *really* small (`label-sm`).
+*   **Color for Intent:** Only use Urgency Orange (`on_tertiary_container`) when human intervention is required.
 
 ### Don't:
-*   **Don't** use pure black (#000000) for text. Use `on-background` (#191c1e) to maintain a soft, premium feel.
-*   **Don't** use 100% opaque borders. They create "visual cages" that break the flow of the clean grid.
-*   **Don't** use standard icons. Use thick-stroke (2pt), rounded-cap icons that match the `8px` radius of the buttons.
+*   **No Pure Black:** Never use #000000. Always use the Deep Navy `primary_container` (#0A0F1C) to maintain "visual soul."
+*   **No Round Pebbles:** Avoid `full` (pill) radius for functional buttons. Stick to `md` (0.375rem) to maintain a "sharp, engineered" persona.
+*   **No Clutter:** If a piece of information isn't vital for executive decision-making, hide it in a "Technical Specs" glassmorphic drawer.
