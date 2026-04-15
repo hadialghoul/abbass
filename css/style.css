@@ -1425,14 +1425,14 @@ body > #spinner + .container-fluid {
 }
 
 .carousel .carousel-item {
-    height: min(88.45vh, 1134px);
+    height: auto;
     overflow: hidden;
-    background-color: #000;
+    background-color: transparent;
 }
 
 .carousel .carousel-item img {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: contain;
     object-position: center center;
 }
@@ -1443,14 +1443,6 @@ body > #spinner + .container-fluid {
 }
 
 @media (max-width: 992px) {
-    .carousel .carousel-item {
-        height: min(70.31vh, 861.84px);
-    }
-    
-    .carousel .carousel-item img {
-        height: 100%;
-    }
-
     .carousel .carousel-indicators [data-bs-target] {
         width: 60px;
         height: 60px;
@@ -1466,14 +1458,6 @@ body > #spinner + .container-fluid {
 }
 
 @media (max-width: 768px) {
-    .carousel .carousel-item {
-        height: min(58.97vh, 703.08px);
-    }
-
-    .carousel .carousel-item img {
-        height: 100%;
-    }
-
     .carousel .carousel-indicators [data-bs-target] {
         width: 50px;
         height: 50px;
