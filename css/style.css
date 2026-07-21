@@ -1295,15 +1295,15 @@ body > #spinner + .container-fluid {
 }
 
 .navbar-brand h1 {
-    font-size: 2rem;
-    letter-spacing: 2px;
+    max-height: none;
+    max-width: none;
     color: white;
     font-weight: bold;
 }
 
 .navbar-brand img {
-    max-height: 80px;
-    max-width: 200px;
+    max-height: none;
+    max-width: none;
     width: auto;
     height: auto;
     object-fit: contain;
@@ -1314,13 +1314,13 @@ body > #spinner + .container-fluid {
 }
 
 .navbar {
-    min-height: 80px;
+    min-height: auto;
 }
 
 .navbar .navbar-nav .nav-link {
     margin-right: 35px;
     padding: 15px 0;
-    color: white;
+    color: #2A3E5C;
     font-size: 16px;
     text-transform: uppercase;
     font-weight: 600;
@@ -1329,9 +1329,10 @@ body > #spinner + .container-fluid {
 
 .navbar .navbar-nav .nav-link:hover,
 .navbar .navbar-nav .nav-link.active {
-    color: white;
-    opacity: 0.8;
+    color: #1f2f45;
+    opacity: 1;
 }
+
 
 .navbar .dropdown-toggle::after {
     border: none;
@@ -1343,6 +1344,10 @@ body > #spinner + .container-fluid {
 }
 
 @media (max-width: 991.98px) {
+    .navbar .navbar-brand {
+        margin-left: 12px !important;
+    }
+
     .navbar .navbar-nav .nav-link  {
         margin-right: 0;
         padding: 10px 0;
@@ -1363,13 +1368,19 @@ body > #spinner + .container-fluid {
         opacity: 0;
         visibility: hidden;
         transition: .5s;
+        z-index: 1055;
     }
 
+    .navbar .nav-item:hover .dropdown-menu,
     .navbar .nav-item.show .dropdown-menu {
         top: 100%;
         visibility: visible;
         transition: .5s;
         opacity: 1;
+    }
+
+    .navbar .nav-item {
+        position: relative;
     }
 }
 
@@ -1418,25 +1429,24 @@ body > #spinner + .container-fluid {
 }
 
 .carousel .carousel-item {
-    height: 1200px;
+    height: auto;
     overflow: hidden;
+    background-color: transparent;
 }
 
 .carousel .carousel-item img {
     width: 100%;
-    height: 1200px;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
+    object-position: center center;
+}
+
+.carousel .carousel-item .display-1 {
+    font-size: 2.2rem;
+    line-height: 1.1;
 }
 
 @media (max-width: 992px) {
-    .carousel .carousel-item {
-        height: 800px;
-    }
-    
-    .carousel .carousel-item img {
-        height: 800px;
-    }
-
     .carousel .carousel-indicators [data-bs-target] {
         width: 60px;
         height: 60px;
@@ -1445,17 +1455,13 @@ body > #spinner + .container-fluid {
     .carousel .carousel-caption {
         padding-left: 10rem;
     }
+
+    .carousel .carousel-item .display-1 {
+        font-size: 1.5rem;
+    }
 }
 
 @media (max-width: 768px) {
-    .carousel .carousel-item {
-        height: 600px;
-    }
-
-    .carousel .carousel-item img {
-        height: 600px;
-    }
-
     .carousel .carousel-indicators [data-bs-target] {
         width: 50px;
         height: 50px;
@@ -1464,11 +1470,15 @@ body > #spinner + .container-fluid {
     .carousel .carousel-caption {
         padding-left: 9rem;
     }
+
+    .carousel .carousel-item .display-1 {
+        font-size: 1rem;
+    }
 }
 
 @media (min-width: 1200px) {
     .carousel .carousel-item .display-1 {
-        font-size: 7rem;
+        font-size: 2.9rem;
     }
 }
 
@@ -2275,7 +2285,9 @@ body > #spinner + .container-fluid {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     animation: fadeInDown 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    overflow: hidden;
+    max-height: 70vh;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .navbar-nav .dropdown-menu::before {
