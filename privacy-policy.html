@@ -9,9 +9,7 @@
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link href="img/favicon.ico" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,59 +38,92 @@
     </div>
     <!-- Spinner End -->
     
-    <!-- Navbar Start -->
-    <div class="container-fluid sticky-top wow fadeIn" data-wow-delay="0.1s" style="background-color: #f8f6ef;">
+    <!-- Topbar Start -->
+    <div class="topbar-wrapper">
         <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light p-lg-0" style="min-height: auto; padding: 15px 0; background-color: #f8f6ef;">
-                <a href="index.html" class="navbar-brand" style="padding: 0; margin-right: 2rem; margin-left: -40px;">
-                    <img src="img/logo3.png" alt="Primefix USA" style="height: 110px; width: auto;">
-                </a>
-                <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav">
-                        <a href="index.html" class="nav-item nav-link">Home</a>
-                        <a href="index.html#about" class="nav-item nav-link">About</a>
-                        <div class="nav-item dropdown">
-                            <a href="services.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
-                            <div class="dropdown-menu bg-light rounded-0 rounded-bottom m-0">
-                                <a href="services.html#electrical" class="dropdown-item">Electrical</a>
-                                <a href="services.html#plumbing" class="dropdown-item">Plumbing</a>
-                                <a href="services.html#hvac" class="dropdown-item">HVAC</a>
-                                <a href="services.html#locksmith" class="dropdown-item">Locksmith</a>
-                                <a href="services.html#painting" class="dropdown-item">Painting</a>
-                                <a href="services.html#handyman" class="dropdown-item">Handyman</a>
-                                <a href="services.html#flooring" class="dropdown-item">Flooring</a>
-                                <a href="services.html#janitorial" class="dropdown-item">Janitorial</a>
-                                <a href="services.html#pest-control" class="dropdown-item">Pest Control</a>
-                                <a href="services.html#pressure-washing" class="dropdown-item">Pressure Washing</a>
-                            </div>
-                        </div>
-                        <div class="nav-item dropdown">
-                            <a href="industries.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Industries</a>
-                            <div class="dropdown-menu bg-light rounded-0 rounded-bottom m-0">
-                                <a href="industries.html#schools" class="dropdown-item">Schools</a>
-                                <a href="industries.html#retail-centers" class="dropdown-item">Retail Centers</a>
-                                <a href="industries.html#shopping-malls" class="dropdown-item">Shopping Malls</a>
-                                <a href="industries.html#office-buildings" class="dropdown-item">Office Buildings</a>
-                                <a href="industries.html#warehouses" class="dropdown-item">Warehouses</a>
-                                <a href="industries.html#healthcare-facilities" class="dropdown-item">Healthcare Facilities</a>
-                                <a href="industries.html#industrial-facilities" class="dropdown-item">Industrial Facilities</a>
-                                <a href="industries.html#hospitality-hotels" class="dropdown-item">Hospitality & Hotels</a>
-                            </div>
-                        </div>
-                        <a href="index.html#contact" class="nav-item nav-link">Contact</a>
-                    </div>
-                    <div class="ms-auto d-none d-lg-block">
-                        <a href="index.html#contact" class="btn btn-primary py-2 px-3">Request Service</a>
-                    </div>
+            <div class="topbar-content">
+                <div class="topbar-left">
+                    <a href="#" class="topbar-item topbar-address">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>453 S Spring Street Ste 400 Los Angeles, CA 90013</span>
+                    </a>
+                    <a href="tel:5551234567" class="topbar-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>(555) 123-4567</span>
+                    </a>
                 </div>
-            </nav>
+                <div class="topbar-right">
+                    <a href="mailto:info@primefixusa.com" class="topbar-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@primefixusa.com</span>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
-    <!-- Navbar End -->
+    <!-- Topbar End -->
     
+    <!-- Navbar Start -->
+    <nav class="navbar-wrapper navbar-expand-lg">
+        <div class="container">
+            <a href="index.html" class="navbar-logo">
+                <h1>PRIMEFIX USA</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#about" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="services.html" class="nav-link dropdown-toggle" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Services
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                            <li><a class="dropdown-item" href="services.html#handyman">Handyman</a></li>
+                            <li><a class="dropdown-item" href="services.html#painting">Painting</a></li>
+                            <li><a class="dropdown-item" href="services.html#plumbing">Plumbing</a></li>
+                            <li><a class="dropdown-item" href="services.html#flooring">Flooring</a></li>
+                            <li><a class="dropdown-item" href="services.html#locksmith">Locksmith</a></li>
+                            <li><a class="dropdown-item" href="services.html#electrical">Electrical</a></li>
+                            <li><a class="dropdown-item" href="services.html#hvac">HVAC</a></li>
+                            <li><a class="dropdown-item" href="services.html#janitorial">Janitorial</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="industries.html" class="nav-link dropdown-toggle" id="industriesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Industries
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="industriesDropdown">
+                            <li><a class="dropdown-item" href="industries.html#schools">Schools</a></li>
+                            <li><a class="dropdown-item" href="industries.html#retail-centers">Retail Centers</a></li>
+                            <li><a class="dropdown-item" href="industries.html#shopping-malls">Shopping Malls</a></li>
+                            <li><a class="dropdown-item" href="industries.html#office-buildings">Office Buildings</a></li>
+                            <li><a class="dropdown-item" href="industries.html#warehouses">Warehouses</a></li>
+                            <li><a class="dropdown-item" href="industries.html#healthcare-facilities">Healthcare Facilities</a></li>
+                            <li><a class="dropdown-item" href="industries.html#industrial-facilities">Industrial Facilities</a></li>
+                            <li><a class="dropdown-item" href="industries.html#hospitality-hotels">Hospitality & Hotels</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#contact" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+                <div class="navbar-cta">
+                    <a href="index.html#contact" class="btn-cta">REQUEST SERVICE</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
     <!-- Privacy Policy Content Start -->
     <div class="container-fluid pt-6 pb-6">
         <div class="container">
@@ -144,15 +175,6 @@
                         </div>
 
                         <div class="mb-5">
-                            <h3 class="text-uppercase mb-3" style="color: #000;">SMS Communications</h3>
-                            <p class="mb-3">If you provide your mobile phone number and consent to receive text messages from Primefix USA LLC, we may send you SMS messages related to service requests, appointment scheduling, technician arrival notifications, work order updates, customer support, and other service-related communications.</p>
-                            <p class="mb-3">Message frequency may vary. Message and data rates may apply based on your mobile carrier plan.</p>
-                            <p class="mb-3">You may opt out of receiving SMS messages at any time by replying STOP to any message. For assistance, reply HELP or contact us directly.</p>
-                            <p class="mb-3">SMS consent is not shared with third parties or affiliates for marketing purposes.</p>
-                            <p class="mb-0">We do not sell, rent, or share your mobile phone number with third parties for their marketing purposes.</p>
-                        </div>
-
-                        <div class="mb-5">
                             <h3 class="text-uppercase mb-3" style="color: #000;">Changes to This Policy</h3>
                             <p>We may update this Privacy Policy at any time. Changes are effective immediately upon posting. Continued use of the Site indicates acceptance of the updated policy.</p>
                         </div>
@@ -177,24 +199,21 @@
                 <div class="col-lg-4 col-md-12 footer-our-office">
                     <h5 class="text-uppercase text-light mb-4">Our Office</h5>
                     <p class="mb-2"><i class="fa fa-map-marker-alt text-primary me-3"></i>453 S Spring Street Ste 400 Los Angeles, CA 90013 United States</p>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt text-primary me-3"></i>3120 Southwest Freeway 1st Flr Houston, TX 77098 United States</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt text-primary me-3"></i>(310) 620-6090</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt text-primary me-3"></i>(555) 123-4567</p>
                     <p class="mb-2"><i class="fa fa-envelope text-primary me-3"></i>info@primefixusa.com</p>
                 </div>
                 <div class="col-lg-4 col-md-12">
                     <h5 class="text-uppercase text-light mb-4">Quick Links</h5>
                     <a class="btn btn-link" href="index.html#about">About Us</a>
                     <a class="btn btn-link" href="index.html#contact">Contact Us</a>
-                    <a class="btn btn-link" href="#service">Our Services</a>
+                    <a class="btn btn-link" href="services.html">Our Services</a>
                     <a class="btn btn-link" href="terms-of-use.html">Terms of Use</a>
                     <a class="btn btn-link" href="privacy-policy.html">Privacy Policy</a>
-                    
                 </div>
                 <div class="col-lg-4 col-md-12">
-                    <h5 class="text-uppercase text-light mb-4">24/7 Emergency Service</h5>
-                  
+                    <h5 class="text-uppercase text-light mb-4">Business Hours</h5>
+                    <p class="text-uppercase mb-0">24/7 Emergency Service</p>
                 </div>
-                
             </div>
         </div>
     </div>
@@ -205,7 +224,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    &copy; <a class="fw-semi-bold" href="#">Primefix </a>, 2026 — Precision, Accountability, and Trade Excellence.Skilled Labor. Trusted Results. | <a href="terms-of-use.html">Terms of Use</a> | <a href="privacy-policy.html">Privacy Policy</a>
+                    &copy; <a class="fw-semi-bold" href="#">Primefix </a>, 2025 — Precision, Accountability, and Trade Excellence.Skilled Labor. Trusted Results. | <a href="terms-of-use.html">Terms of Use</a> | <a href="privacy-policy.html">Privacy Policy</a>
                 </div>
             </div>
         </div>
